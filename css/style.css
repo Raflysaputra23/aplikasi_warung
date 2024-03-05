@@ -1,0 +1,133 @@
+.font-poppins {
+	font-family: 'Poppins', sans-serif;
+}
+.font-madimi {
+	font-family: "Madimi One", sans-serif;
+}
+.font-intro {
+	font-family: "Shadows Into Light", cursive;
+}
+.font-tilana {
+	font-family: "Tillana", system-ui;
+}
+.text-shadow {
+	text-shadow: -1px 1px 2px black;
+}
+.hamburger-menu {
+	box-shadow: 0px 0px 2px black;
+	border-radius: 8px;
+	width: 40px;
+	height: 35px;
+	outline: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 7px 0px;
+	align-items: center;
+}
+::-webkit-scrollbar {
+	width: 5px;
+}
+::-webkit-scrollbar-thumb {
+	background-color: blue;
+	border-radius: 30px;
+}
+.hamburger-menu span {
+	width: 60%;
+	height: 2px;
+	display: inline-block;
+	background-color: black;
+	border-radius: 20px;
+	border: 1px solid black;
+	transition: all .3s ease;
+}
+.hover:hover {
+	opacity: 1 !important;
+	box-shadow: 0 0 4px black;
+	transition: all .3s ease;
+	display: block !important;
+}
+.hover-group:hover > i {
+	display: block !important;
+}
+#logout:hover > .pover {
+	opacity: 1;
+	display: block;
+}
+.pover {
+	padding: 8px 12px;
+	font-size: .8em;
+	border-radius: 7px;
+	font-family: 'Poppins', sans-serif;
+	border: 1px solid transparent;
+	position: absolute;
+	left: -85px;
+	top: 0;
+	opacity: 0;
+	display: none;
+	transition: all .3s ease;
+	background-color: #fff;
+	box-shadow: 0px 0px 2px red;
+	color: red;
+}
+.pover::after {
+	content: '';
+	right: -17px;
+	position: absolute;
+	border-width: 8px;
+	border-style: solid;
+	border-color: transparent transparent transparent red;
+	opacity: .5;
+}
+#tambahProduk:hover > .pover2 {
+	opacity: 1;
+	display: block;
+}
+.pover2 {
+	padding: 8px 12px;
+	font-size: .8em;
+	border-radius: 7px;
+	font-family: 'Poppins', sans-serif;
+	border: 1px solid transparent;
+	position: absolute;
+	left: -135px;
+	top: 0;
+	opacity: 0;
+	display: none;
+	transition: all .3s ease;
+	background-color: #fff;
+	box-shadow: 0px 0px 2px blue;
+	color: blue;
+}
+.pover2::after {
+	content: '';
+	right: -17px;
+	position: absolute;
+	border-width: 8px;
+	border-style: solid;
+	border-color: transparent transparent transparent blue;
+	opacity: .5;
+}
+
+.card:hover > .propers {
+	display: block !important;
+	opacity: 1;
+}
+#card-pembayaran {
+	transition: all .4s ease;
+}
+.max-height-pembayaran {
+	height: 140px !important;
+	max-height: 140px !important;
+}
+#pembayaran div {
+	cursor: pointer;
+}
+
+@media print {
+	.print {
+		display: none;
+	}
+}
+
+
