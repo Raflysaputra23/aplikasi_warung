@@ -18,6 +18,7 @@ class Keranjang_model {
 
 		$stok = $this->getStokProduk($idProduk);
 		if ($quantity > $stok['stok_produk']) {
+			$_SESSION['cart'][$idProduk]['quantity'] -= 1;
 			Flasher::setFlash('Gagal','pesanan anda melebihi stok produk','error');
 			header('location:'.Constant::BASEURL.'product');
 			exit;

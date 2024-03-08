@@ -137,5 +137,35 @@ class Produk_model {
 		return $this->db->single();
 		 die;
 	}
+	public function getKeranjangById($id) {
+		$this->db->query('SELECT * FROM produk WHERE id_produk = :id_produk');
+		$this->db->bind('id_produk', $id);
+		$this->db->execute();
+		return $this->db->single();
+		 die;
+	}
+
+	public function ubahDataProduk($data) {
+		$idProduk = $data['id_produk'];
+		$gambarProduk = $data['gambar_produk'];
+		$namaProduk = $data['nama_produk'];
+		$stokProduk = $data['stok_produk'];
+		$hargaProduk = $data['harga_produk'];
+
+		if ($_FILES['gambar_produk']['error'] == 0) {
+			$gambarProduk = $this->uploadGambar($_FILES);
+		} 
+
+		$this->db->query('UPDATE produk SET gambar_produk = :gambar_produk, nama_produk = :nama_produk, stok_produk = :stok_produk, harga_produk = :harga_produk WHERE id_produk = :id_produk ');
+		$this->db->bind('gambar_produk', $gambarProduk);
+		$this->db->bind('nama_produk', $namaProduk);
+		$this->db->bind('stok_produk', $stokProduk);
+		$this->db->bind('harga_produk', $hargaProduk);
+		$this->db->bind('id_produk', $idProduk);
+		$this->db->execute();
+
+		return $this->db->rowCount();
+
+	}
 	
 }

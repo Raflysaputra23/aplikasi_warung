@@ -73,4 +73,21 @@ class Product extends Controller {
 			exit;
 		}
 	}
+
+	public function tampilProduk() {
+		$idProduk = json_decode((file_get_contents('php://input')));
+		echo json_encode($this->model('Produk_model')->getKeranjangById($idProduk));
+	}
+
+	public function ubahProduk() {
+		if ($this->model('Produk_model')->ubahDataProduk($_POST) > 0) {
+			Flasher::setFlash('Berhasil','data anda berhasil diubah','success');
+			header('location:'.Constant::BASEURL.'product');
+			exit;
+		} else {
+			Flasher::setFlash('Gagal','data anda gagal diubah','error');
+			header('location:'.Constant::BASEURL.'product');
+			exit;
+		}
+	}
 }

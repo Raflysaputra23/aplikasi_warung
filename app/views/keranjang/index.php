@@ -29,10 +29,10 @@
 	</div>
 	<?php endforeach ?>
 	<?php else: ?>
-		<h3 class="font-poppins m-auto">KERANJANG NOT FOUND <i class="fa fa-search"></i></h3>
+		<h3 class="font-poppins m-auto">TIDAK ADA PRODUK DIDALAM KERANJANG <i class="fa fa-search"></i></h3>
 	<?php endif; ?>
 
-	<footer id="pembayaran" class="shadow-sm position-fixed rounded-2 p-2" style="bottom: 17px; max-width: 950px; width: 905px; border-top: 5px solid #eaeaea !important; border: 1px solid #eaeaea; border-bottom: none;">
+	<footer id="pembayaran" class="shadow-sm position-fixed rounded-2 p-2 bg-white" style="bottom: 17px; max-width: 950px; width: 905px; border-top: 5px solid #eaeaea !important; border: 1px solid #eaeaea; border-bottom: none;">
 		<div id="tombol-pembayaran" class="arrow-top rounded-circle d-flex justify-content-center align-items-center bg-primary position-absolute end-50" style="width: 30px; height: 30px; top: -15px; transform: translateX(50%);"><i class="fa fa-arrow-up text-white"></i></div>
 		<form action="<?= Constant::BASEURL ?>product/tranksaksi/<?= $_SESSION['id_user']?>" method="post" id="card-pembayaran"  class="content-footer overflow-hidden mt-2 font-poppins" style="height: 2px;">
 			<h3 class="">Total harga :</h3>
@@ -44,6 +44,17 @@
 			<?php endif; ?>
 		</form>
 	</footer>
+
+	<!-- CANVAS -->
+	<div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+	  <div class="offcanvas-header">
+	    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
+	    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	  </div>
+	  <div class="offcanvas-body small">
+	    ...
+	  </div>
+	</div>
 
 </div>
 

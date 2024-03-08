@@ -9,19 +9,19 @@
 	  </div>
 	  <div class="carousel-inner">
 	    <div class="carousel-item active" data-bs-interval="10000">
-	      <img src="img/gambar1.jpg" class="w-100" alt="...">
+	      <img src="img/ayam1.jpg" class="w-100" alt="...">
 	    </div>
 	    <div class="carousel-item" data-bs-interval="2000">
-	      <img src="img/gambar2.jpg" class="w-100" alt="...">
+	      <img src="img/eskrim1.jpg" class="w-100" alt="...">
 	    </div>
 	    <div class="carousel-item">
-	      <img src="img/gambar3.jpg" class="w-100" alt="...">
+	      <img src="img/ayam2.jpg" class="w-100" alt="...">
 	    </div>
 	    <div class="carousel-item">
-	      <img src="img/gambar4.jpg" class="w-100" alt="...">
+	      <img src="img/eskrim2.jpeg" class="w-100" alt="...">
 	    </div>
 	    <div class="carousel-item">
-	      <img src="img/gambar5.jpg" class="w-100" alt="...">
+	      <img src="img/ayam4.jpg" class="w-100" alt="...">
 	    </div>
 	  </div>
 	  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
