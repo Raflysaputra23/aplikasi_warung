@@ -45,14 +45,14 @@
 		form {
 			transition: all .3s ease;
 		}
-		.form-group input:focus:valid {
-			border: 1px solid green;
-			box-shadow: 0 0 2px green;
+		.form-group input:focus {
+			border: 1px solid blue;
+			box-shadow: 0 0 2px blue;
 		}
-		.form-group input:focus:invalid {
+		/*.form-group input:focus:invalid {
 			border: 1px solid red;
 			box-shadow: 0 0 2px red;
-		}
+		}*/
 		.form-group input:focus ~ label,
 		.form-group input:valid ~label{
 			transform: translateY(-25px);
@@ -125,11 +125,14 @@
 				<input type="text" name="username" id="username" class="form-control pt-2 font-poppins focus-ring focus-ring-light" style="padding-right: 38px; font-size: 15px;" required>
 				<label for="username" class="position-absolute font-poppins" style="bottom: 8px; left: 12px;">Username</label>
 				<i class="fa fa-user position-absolute fs-5" style="right: 13px; bottom: 10px;"></i>
+				<p class="info1 position-absolute font-tilana" style="font-size: 15px; left: 4px;"></p>
 			</div>
 			<div class="form-group mb-4 position-relative">
 				<input type="text" name="username2" id="username2" class="form-control pt-2 font-poppins focus-ring focus-ring-light" style="padding-right: 38px; font-size: 15px;" required>
 				<label for="username2" class="position-absolute font-poppins" style="bottom: 8px; left: 12px;">Nama Lengkap</label>
 				<i class="fa fa-user position-absolute fs-5" style="right: 13px; bottom: 10px;"></i>
+				<p class="info2 position-absolute font-tilana" style="font-size: 15px; left: 4px;"></p>
+
 			</div>
 			<div class="form-group mb-4 position-relative">
 				<input type="text" name="email" id="email" class="form-control pt-2 font-poppins focus-ring focus-ring-light" style="padding-right: 38px; font-size: 15px;" required>
@@ -140,11 +143,14 @@
 				<input type="password" name="password" id="password" class="form-control pt-2 font-poppins focus-ring focus-ring-light" style="padding-right: 38px; font-size: 15px;" required>
 				<label for="password" class="position-absolute font-poppins" style="bottom: 8px; left: 12px;">Password</label>
 				<i id="icon1" class="fa fa-eye-slash position-absolute fs-5" style="right: 12px; bottom: 10px;"></i>
+				<p class="info3 position-absolute font-tilana" style="font-size: 15px; left: 4px;"></p>
 			</div>
 			<div class="form-group mb-4 position-relative">
 				<input type="password" name="password2" id="password2" class="form-control pt-2 font-poppins focus-ring focus-ring-light" style="padding-right: 38px; font-size: 15px;" required>
 				<label for="password2" class="position-absolute font-poppins" style="bottom: 8px; left: 12px;">Confirm Password</label>
 				<i id="icon2" class="fa fa-eye-slash position-absolute fs-5" style="right: 12px; bottom: 10px;"></i>
+				<p class="info4 position-absolute font-tilana" style="font-size: 15px; left: 4px;"></p>
+
 			</div>
 			<button class="btn btn-outline-danger font-poppins mt-1" style="width: 100%;">Register</button>
 			<div class="d-flex justify-content-between align-items-center my-3 font-poppins">
@@ -165,6 +171,10 @@
 		const input = document.querySelector('#password')
 		const icon2 = document.querySelector('#icon2')
 		const input2 = document.querySelector('#password2')
+		const username = document.querySelector('#username')
+		const username2 = document.querySelector('#username2')
+		const form = document.querySelector('#form-register')
+
 
 		
 		 icon.addEventListener('click', function() {
@@ -190,6 +200,68 @@
 		    icon2.classList.remove('fa-eye');
 		  }
 
+		})
+
+		input.addEventListener('keyup', function() {
+			if (input.value.length > 0) {
+				if (input.value.length >= 4) {
+					document.querySelector('.info3').innerHTML = 'sip';
+					document.querySelector('.info3').classList.add('text-success');
+					document.querySelector('.info3').classList.remove('text-danger');
+    				
+				} else {
+					document.querySelector('.info3').innerHTML = 'panjang harus 4 karakter';
+					document.querySelector('.info3').classList.add('text-danger');
+					document.querySelector('.info3').classList.remove('text-success');
+				}
+			} else {
+				document.querySelector('.info3').innerHTML = '';
+			}
+		})
+		input2.addEventListener('keyup', function() {
+			if (input2.value.length > 0) {
+				if (input2.value.length >= 4) {
+					document.querySelector('.info4').innerHTML = 'sip';
+					document.querySelector('.info4').classList.add('text-success');
+					document.querySelector('.info4').classList.remove('text-danger');
+				} else {
+					document.querySelector('.info4').innerHTML = 'panjang harus 4 karakter';
+					document.querySelector('.info4').classList.add('text-danger');
+					document.querySelector('.info4').classList.remove('text-success');
+				}	
+			} else {
+				document.querySelector('.info4').innerHTML = '';
+			}
+		})
+		username.addEventListener('keyup', function() {
+			if (username.value.length > 0) {
+				if (username.value.length >= 4) {
+					document.querySelector('.info1').innerHTML = 'sip';
+					document.querySelector('.info1').classList.add('text-success');
+					document.querySelector('.info1').classList.remove('text-danger');
+				} else {
+					document.querySelector('.info1').innerHTML = 'panjang harus 4 karakter';
+					document.querySelector('.info1').classList.add('text-danger');
+					document.querySelector('.info1').classList.remove('text-success');
+				}	
+			} else {
+				document.querySelector('.info1').innerHTML = '';
+			}
+		})
+		username2.addEventListener('keyup', function() {
+			if (username2.value.length > 0) {
+				if (username2.value.length >= 4) {
+					document.querySelector('.info2').innerHTML = 'sip';
+					document.querySelector('.info2').classList.add('text-success');
+					document.querySelector('.info2').classList.remove('text-danger');
+				} else {
+					document.querySelector('.info2').innerHTML = 'panjang harus 4 karakter';
+					document.querySelector('.info2').classList.add('text-danger');
+					document.querySelector('.info2').classList.remove('text-success');
+				}	
+			} else {
+				document.querySelector('.info2').innerHTML = '';
+			}
 		})
 		
 	</script>
